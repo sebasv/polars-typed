@@ -1,0 +1,30 @@
+[project]
+name = "polars-typed"
+version = "0.1.0"
+description = "Type hints for schemas of polars data frames"
+readme = "README.md"
+authors = [
+    { name = "Sebastiaan Vermeulen", email = "me@vqi.io" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.38.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+ "pytest>=8.3.5",
+ "pyright>=1.1.402",
+ "numpy>=2.2.6",
+ "prek>=0.3.3",
+]
+
+[tool.pyright]
+exclude = ["polars_typed_tests"]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+reportUntypedFunctionDecorator = false
